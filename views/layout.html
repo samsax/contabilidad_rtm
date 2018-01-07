@@ -25,11 +25,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
-            <i class="fa fa-fw fa-dashboard"></i>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Gastos</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="{{=URL('default', 'data/create/gasto')}}">Crear gasto</a>
+            </li>
+            <li>
+              <a href="{{=URL('default', 'data/select/gasto')}}">Ver gastos</a>
+            </li>
+            <li>
+              <a href="{{=URL('default', 'data/create/proveedor')}}">Crear proveedor</a>
+            </li>
+            <li>
+              <a href="{{=URL('default', 'data/select/proveedor')}}">Lista proveedores</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">

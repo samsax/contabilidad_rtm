@@ -149,6 +149,52 @@ if configuration.get('scheduler.enabled'):
 # >>> rows = db(db.mytable.myfield == 'value').select(db.mytable.ALL)
 # >>> for row in rows: print row.id, row.myfield
 # -------------------------------------------------------------------------
+db.define_table('proveedor',
+                Field('nombre','string'),
+                Field('descripcion','string'))
+
+
+db.define_table('gasto',
+                Field('valor_neto','double'),
+                Field('valor_bruto','double'),
+                Field('tipo_iva','string'),#Efectivo o Banco
+                Field('monto_iva','double'),#Movimiento en caja o en el banco
+                Field('proveedor_id','reference proveedor' ),
+                Field('factura_proveedor','string'),
+                Field('fecha_gasto','datetime', default=request.now))
+
+db.define_table('impuesto',
+                Field('nombre','string'),
+                Field('porcentaje','integer'),
+                Field('valor','integer'),
+                Field('id_gasto','reference gasto'))
+                
+db.define_table('pago',
+                Field('id_gasto','reference gasto'),
+                Field('tipo','integer'),#Efectivo o Banco
+                Field('id_proveedor','integer'),#Movimiento en caja o en el banco
+                Field('monto','double'),
+                Field('fecha_pago','datetime', default=request.now))
+
+db.define_table('movimiento_caja',
+                Field('user_id','integer'),
+                Field('id_gasto','reference gasto'),
+                Field('tipo','integer'),#Efectivo o Banco
+                Field('id_movimiento','integer'),#Movimiento en caja o en el banco
+                Field('monto','double'),
+                Field('fecha_movimiento_caja','datetime', default=request.now))
+
+db.define_table('cuenta_contable',
+                Field('nombre','string'),
+                Field('numero','integer'))
+                
+db.define_table('movimiento_cuenta_contable',
+                Field('user_id','integer'),
+                Field('id_gasto','reference gasto'),
+                Field('tipo','integer'),#Efectivo o Banco
+                Field('id_movimiento','integer'),#Movimiento en caja o en el banco
+                Field('monto','double'),
+                Field('fecha_pago','datetime', default=request.now))
 
 # -------------------------------------------------------------------------
 # after defining tables, uncomment below to enable auditing

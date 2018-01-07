@@ -3,12 +3,25 @@
 # This is a sample controller
 # this file is released under public domain and you can use without limitations
 # -------------------------------------------------------------------------
+from gluon.tools import Crud
 
+
+crud = Crud(db)
 # ---- example index page ----
 def index():
     
     return dict()
 
+
+def login():
+    
+    return dict()
+
+
+
+def data(): 
+    
+    return dict(form=crud())
 # ---- API (example) -----
 @auth.requires_login()
 def api_get_user_email():
