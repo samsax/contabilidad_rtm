@@ -7,6 +7,8 @@ from gluon.tools import Crud
 
 
 crud = Crud(db)
+crud.settings.formstyle='table2cols'
+
 # ---- example index page ----
 def index():
     
