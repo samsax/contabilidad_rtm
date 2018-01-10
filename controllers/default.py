@@ -10,6 +10,7 @@ crud = Crud(db)
 crud.settings.formstyle='table2cols'
 
 # ---- example index page ----
+@auth.requires_login()
 def index():
     
     return dict()
@@ -20,7 +21,7 @@ def login():
     return dict()
 
 
-
+@auth.requires_login()
 def data(): 
     
     return dict(form=crud())

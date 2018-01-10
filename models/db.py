@@ -151,17 +151,22 @@ if configuration.get('scheduler.enabled'):
 # -------------------------------------------------------------------------
 db.define_table('proveedor',
                 Field('nombre','string'),
+                Field('nit','string'),
                 Field('descripcion','string'))
 
+db.define_table('iva',
+                Field('nombre','string'),
+                Field('porcentaje','integer'))
 
 db.define_table('gasto',
                 Field('valor_neto','double'),
                 Field('valor_bruto','double'),
-                Field('tipo_iva','string'),#Efectivo o Banco
+                Field('iva_id','reference iva'),#Efectivo o Banco
                 Field('monto_iva','double'),#Movimiento en caja o en el banco
                 Field('proveedor_id','reference proveedor' ),
                 Field('factura_proveedor','string'),
-                Field('fecha_gasto','datetime', default=request.now))
+                Field('fecha_gasto','date', default=request.now))
+
 
 db.define_table('impuesto',
                 Field('nombre','string'),

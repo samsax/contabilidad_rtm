@@ -14,12 +14,23 @@
   <link href="{{=URL('static','startadmin/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="{{=URL('static','startadmin/css/sb-admin.css')}}" rel="stylesheet">
+  <!-- Jquery UI-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Bootstrap core JavaScript-->
+  <script type="text/javascript" src="{{=URL('static','startadmin/vendor/jquery/jquery.min.js')}}"></script>
+  <script type="text/javascript" src="{{=URL('static','startadmin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <!-- Core plugin JavaScript-->
+  <script type="text/javascript" src="{{=URL('static','startadmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <!-- Custom scripts for all pages-->
+  <script type="text/javascript" src="{{=URL('static','startadmin/js/sb-admin.min.js')}}"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand" href="index.html">Contabilidad RTM Sonsón</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,7 +43,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="{{=URL('default', 'data/create/gasto')}}">Crear gasto</a>
+              <a href="{{=URL('gasto', 'crear')}}">Crear gasto</a>
             </li>
             <li>
               <a href="{{=URL('default', 'data/select/gasto')}}">Ver gastos</a>
@@ -267,7 +278,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="{{=URL('default', 'user', args='logout')}}">Logout</a>
           </div>
         </div>
       </div>
@@ -275,13 +286,6 @@
    
   </div>
 </body>
- <!-- Bootstrap core JavaScript-->
-    <script src="{{=URL('static','startadmin/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{=URL('static','startadmin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="{{=URL('static','startadmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="{{=URL('static','startadmin/js/sb-admin.min.js')}}"></script>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ 
+    
 </html>
