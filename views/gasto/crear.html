@@ -70,13 +70,17 @@
             <td class="w2p_fc"></td>
          </tr>
          <tr class="w2p_even odd" id="submit_record__row2">
-            <td class="w2p_fw" colspan="2"><input type="submit" value="Enviar"></td>
+            <td class="w2p_fw" colspan="2">
+            	<button id="guardar_gasto" class="btn btn-primary" type="button">
+                  <i class="fa fa-save"></i> Enviar
+                </button></td>
          </tr>
       </tbody>
    </table>
-   <div style="display:none;"><input name="_next" type="hidden"><input name="_formkey" type="hidden" value="15104f6c-de7e-4ad7-8f98-4061e7171754"><input name="_formname" type="hidden" value="gasto/None"></div>
+   <div style="display:none;"><input name="_next" type="hidden"><input name="_formkey" type="hidden" value=""><input name="_formname" type="hidden" value="gasto/None"></div>
 </form>
 <script src="{{=URL('static','js/gastos/crear.js')}}"></script>
 <script type="text/javascript">
-	urlOpcionesGastos = "{{=URL('general', 'opciones_gastos')}}"
+	var urlOpcionesGastos = "{{=URL('general', 'opciones_gastos')}}"
+	var url_agregar_gasto = "{{=URL('gasto', 'guardar_gasto')}}"
 </script>

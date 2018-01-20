@@ -16,6 +16,35 @@ $(document).ready(function() {
                     }
                 }
             })
+
+    $(document).on("click", "#guardar_gasto", function() {
+           valorBruto =$('#gasto_valor_bruto').val();
+           fecha = $('#gasto_fecha_gasto').val();
+           proveedor = $('#gasto_proveedor_id').val();
+           iva = $('#gasto_tipo_iva').val();
+           montoIva = $('#gasto_monto_iva').val();
+           facturaProveedor = $('#gasto_factura_proveedor').val();
+           valorNeto = $('#gasto_valor_neto').val();
+      $.ajax({
+        url: url_agregar_gasto,
+        data: {
+           valor_neto: valorNeto,
+           valor_bruto: valorBruto,
+           fecha: fecha,
+           proveedor_id: proveedor,
+           iva_id: iva,
+           monto_iva: montoIva,
+           factura_proveedor: facturaProveedor,
+        },
+        type: "POST",
+        success: function(data) {
+            aviso("success", {contenido: "Gasto agredado "});
+        },
+        error: function() {
+            aviso("error", {contenido: "Error"});
+        }
+       });
+   });
    
 });
 

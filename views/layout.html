@@ -25,6 +25,8 @@
   <!-- Custom scripts for all pages-->
   <script type="text/javascript" src="{{=URL('static','startadmin/js/sb-admin.min.js')}}"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- creaciones -->
+  <script type="text/javascript" src="{{=URL('static','js/aviso.js')}}"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -286,6 +288,28 @@
    
   </div>
 </body>
- 
+
+<script type="text/javascript">
+  $.datepicker.regional['es'] = {
+  closeText: 'Cerrar',
+  prevText: "<i class=\"fa fa-chevron-left\"></i>",
+  prevIcon: "<i class=\"fa fa-chevron-left\"></i>",
+    nextText: "<i class=\"fa fa-chevron-right\"></i>",
+  currentText: 'Hoy',
+  monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+  monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+  dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+  dayNamesShort: ['Dom','Lun','Mar','Mie','Juv','Vie','Sab'],
+  dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sa'],
+  weekHeader: 'Sm',
+  dateFormat: 'dd-mm-yy',
+  firstDay: 1,
+  isRTL: false,
+  showMonthAfterYear: false,
+  yearSuffix: ''
+}
+
+$.datepicker.setDefaults($.datepicker.regional['es']);
+</script>
     
 </html>
