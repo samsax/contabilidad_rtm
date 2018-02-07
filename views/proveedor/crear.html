@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+<div id="formulario">
+    <form method="post" id="formdata">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" required="required"></br>
+        <label for="nit">NIT: </label>
+        <input type="text" name="nit" id="nit" required="required"></br>
+        <label for="descripcion">Descripción: </label>
+        <input type="text" name="descripcion" id="descripcion" required="required"></br>
+        <input type="button" id="botonenviar" value="Enviar">
+    </form>
+</div>
+<div id="exito" style="display:none">
+    Sus datos han sido recibidos con éxito.
+</div>
+<div id="fracaso" style="display:none">
+    Se ha producido un error durante el envío de datos.
+</div>
+<script src="{{=URL('static','js/proveedor/crear.js')}}"></script>
+<script type="text/javascript">
+    
+    var urlAgregarProveedor = "{{=URL('proveedor', 'guardar')}}"
+</script>
