@@ -31,8 +31,8 @@ if not request.env.web2py_runtime_gae:
     # if NOT running on Google App Engine use SQLite or other DB
     # ---------------------------------------------------------------------
     db = DAL(
-            #'postgres://Postgres:TbwKR-8u@localhost/contabilidad',
-            'mysql://samsax:contabilidad@samsax.mysql.pythonanywhere-services.com/contabilidad_rtm',
+            #'mysql://samsax:contabilidad@samsax.mysql.pythonanywhere-services.com/contabilidad_rtm',
+            'postgres://fcwlgkzj:pY-Q7leW8agrZIFQLIcEsui3rrVTBVLQ@elmer.db.elephantsql.com:5432/fcwlgkzj',
             migrate=True,
             check_reserved=['all']
             )
