@@ -14,5 +14,19 @@ def guardar_gasto():
 
 
 def lista_gasto():
-	gastos = db(db.gasto.id > 0).select(db.gasto.ALL)
-	return dumps(dict(gastos= gastos))
+	gastos = db((db.gasto.id > 0) 
+				& (db.proveedor.id == db.gasto.proveedor_id)
+				& (db.iva.id == db.gasto.iva_id)).select(db.gasto.ALL, 
+														db.proveedor.nombre,
+														db.iva.porcentaje)
+	respuesta = []
+	for gasto in gastos:
+		row = dict(fecha= str(gasto.gasto.fecha_gasto),
+					proveedor = gasto.proveedor.nombre,
+					iva = gasto.iva.porcentaje,
+					subtotal = gasto.gasto.valor_bruto,
+					total = gasto.gasto.valor_neto,
+					monto_iva = gasto.gasto.monto_iva,
+					descripcion = gasto.gasto.descripcion)
+		respuesta.append(row)
+	return dumps(dict(success= True,gastos= respuesta))

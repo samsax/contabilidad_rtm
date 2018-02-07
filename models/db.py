@@ -161,11 +161,12 @@ db.define_table('iva',
 db.define_table('gasto',
                 Field('valor_neto','double'),
                 Field('valor_bruto','double'),
-                Field('iva_id','reference iva'),#Efectivo o Banco
-                Field('monto_iva','double'),#Movimiento en caja o en el banco
+                Field('iva_id','reference iva'),
+                Field('monto_iva','double'),
                 Field('proveedor_id','reference proveedor' ),
                 Field('factura_proveedor','string'),
-                Field('fecha_gasto','date', default=request.now))
+                Field('fecha_gasto','date', default=request.now),
+                Field('descripcion','string'),)
 
 
 db.define_table('impuesto',
