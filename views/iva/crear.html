@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+<div id="formulario">
+    <form method="post" id="formdata">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" required="required"></br>
+        <label for="porcentaje">Porcentaje: </label>
+        <input type="text" name="porcentaje" id="porcentaje" required="required"></br>
+        <input type="button" id="botonenviar" value="Enviar">
+    </form>
+</div>
+<div id="exito" style="display:none">
+    Sus datos han sido recibidos con éxito.
+</div>
+<div id="fracaso" style="display:none">
+    Se ha producido un error durante el envío de datos.
+</div>
+<script src="{{=URL('static','js/iva/crear.js')}}"></script>
+<script type="text/javascript">
+    
+    var urlAgregarIva = "{{=URL('iva', 'guardar')}}"
+</script>

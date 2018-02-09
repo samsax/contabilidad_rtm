@@ -25,8 +25,9 @@ $(document).ready(function() {
            montoIva = $('#gasto_monto_iva').val();
            facturaProveedor = $('#gasto_factura_proveedor').val();
            valorNeto = $('#gasto_valor_neto').val();
+           descripcion = $('#gasto_descripcion').val();
       $.ajax({
-        url: url_agregar_gasto,
+        url: urlAgregarGasto,
         data: {
            valor_neto: valorNeto,
            valor_bruto: valorBruto,
@@ -34,6 +35,7 @@ $(document).ready(function() {
            proveedor_id: proveedor,
            iva_id: iva,
            monto_iva: montoIva,
+           descripcion: descripcion,
            factura_proveedor: facturaProveedor,
         },
         type: "POST",
@@ -52,16 +54,29 @@ $(document).ready(function() {
     CalcularValores();
  })
 
+ $('#gasto_valor_neto').on('input', function() { 
+    CalcularValores(true,false);
+});
+
+ $('#gasto_valor_bruto').on('input', function() { 
+    CalcularValores(false,true);
+});
+
  $( function() {
    $('#gasto_fecha_gasto').datepicker();
   } );
 
-function CalcularValores(){
+function CalcularValores(inputNeto = false, inputBruto = false){
 
+    valorNeto = $('#gasto_valor_neto').val();
     valorBruto = $('#gasto_valor_bruto').val();
-    console.log(valorBruto);
     tipoIva = $('#gasto_tipo_iva').find(":selected").data('porcentaje');
-    console.log(tipoIva);
-    $('#gasto_valor_neto').val(parseFloat(valorBruto) + parseFloat(valorBruto*tipoIva/100));
-    $('#gasto_monto_iva').val(parseFloat(valorBruto*tipoIva/100));
+    if (inputBruto){
+      $('#gasto_valor_neto').val(parseFloat(valorBruto) + parseFloat(valorBruto*tipoIva/100));
+      $('#gasto_monto_iva').val(parseFloat(valorBruto*tipoIva/100));
+    }
+    else if (inputNeto){
+      $('#gasto_valor_bruto').val(parseFloat(valorNeto/(1+(tipoIva/100))));
+      $('#gasto_monto_iva').val(parseFloat(valorNeto - (valorNeto/(1+(tipoIva/100)))));
+    }  
 } 

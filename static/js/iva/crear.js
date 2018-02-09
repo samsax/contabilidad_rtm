@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(document).on("click", "#botonenviar", function() {
 
       if(validaForm()){                               // Primero validará el formulario.
-            $.post(urlAgregarProveedor,$("#formdata").serialize(),function(res){
+            $.post(urlAgregarIva,$("#formdata").serialize(),function(res){
                 $("#formulario").fadeOut("slow");   // Hacemos desaparecer el div "formulario" con un efecto fadeOut lento.
                 if(res > 0){
                     $("#exito").delay(500).fadeIn("slow");      // Si hemos tenido éxito, hacemos aparecer el div "exito" con un efecto fadeIn lento tras un delay de 0,5 segundos.
@@ -23,9 +23,9 @@ function validaForm(){
         $("#nombre").focus();       // Esta función coloca el foco de escritura del usuario en el campo Nombre directamente.
         return false;
     }
-    if($("#nit").val() == ""){
-        alert("El campo NIT no puede estar vacío.");
-        $("#nit").focus();
+    if($("#porcentaje").val() == ""){
+        alert("El campo porcentaje no puede estar vacío.");
+        $("#porcentaje").focus();
         return false;
     }
     return true; // Si todo está correcto
