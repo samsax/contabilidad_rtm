@@ -10,9 +10,9 @@ $(document).ready(function() {
                       $('#dataTable').append( "<tr><td>"+data.fecha+"</td>"+
                         "<td>"+data.proveedor+"</td>"+
                         "<td>"+data.descripcion+"</td>"+
-                        "<td>"+data.subtotal+"</td>"+
-                        "<td>"+data.monto_iva+"("+data.iva+"%)</td>"+
-                        "<td>"+data.total+"</td>"+
+                        "<td>"+accounting.formatMoney( data.subtotal)+"</td>"+
+                        "<td>"+accounting.formatMoney( data.monto_iva)+"("+data.iva+"%)</td>"+
+                        "<td>"+accounting.formatMoney( data.total)+"</td>"+
                         "</tr>");
                   });
                                                                   

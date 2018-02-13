@@ -1,94 +1,73 @@
 {{extend 'layout.html'}}
-<form action="#" enctype="multipart/form-data" method="post">
-   <table>
-      <tbody>
-         <tr class="w2p_even even" id="gasto_valor_neto__row1">
-            <td class="w2p_fl">
-               <label class="" for="gasto_valor_neto" id="gasto_valor_neto__label">Valor Neto: </label>
-            </td>
-            <td class="w2p_fc">
-            </td>
-         </tr>
-         <tr class="w2p_even odd" id="gasto_valor_neto__row2">
-            <td class="w2p_fw" colspan="2"><input class="double" id="gasto_valor_neto" name="valor_neto" type="text" value="">
-            </td>
-         </tr>
-         <tr class="w2p_even even" id="gasto_valor_bruto__row1">
-            <td class="w2p_fl"><label class="" for="gasto_valor_bruto" id="gasto_valor_bruto__label">Valor Bruto: </label>
-            </td>
-            <td class="w2p_fc"></td>
-         </tr>
-         <tr class="w2p_even odd" id="gasto_valor_bruto__row2">
-            <td class="w2p_fw" colspan="2"><input class="double" id="gasto_valor_bruto" name="valor_bruto" type="text" value=""></td>
-         </tr>
-         <tr class="w2p_even even" id="gasto_tipo_iva__row1">
-            <td class="w2p_fl"><label class="" for="gasto_tipo_iva" id="gasto_tipo_iva__label">Tipo Iva: </label></td>
-            <td class="w2p_fc"></td>
-         </tr>
-          <tr class="w2p_even odd" id="gasto_tipo_iva__row2">
-            <td class="w2p_fw" colspan="2">
-               <select class="generic-widget" id="gasto_tipo_iva" name="tipo_iva">
-                  <option value=""></option>
-               </select>
-            </td>
-         </tr>
-
-         <tr class="w2p_even even" id="gasto_descripcion__row1">
-            <td class="w2p_fl"><label class="" for="gasto_descripcion" id="gasto_descripcion__label">Descripcion: </label></td>
-            <td class="w2p_fc"></td>
-         </tr>
-          <tr class="w2p_even odd" id="gasto_descripcion__row2">
-            <td class="w2p_fw" colspan="2"><input class="double" id="gasto_descripcion" name="descripcion" type="text" value=""></td>
-         </tr>
- 
-         <tr class="w2p_even even" id="gasto_monto_iva__row1">
-            <td class="w2p_fl"><label class="" for="gasto_monto_iva" id="gasto_monto_iva__label">Monto Iva: </label></td>
-            <td class="w2p_fc"></td>
-         </tr>
-         <tr class="w2p_even odd" id="gasto_monto_iva__row2">
-            <td class="w2p_fw" colspan="2"><input class="double" id="gasto_monto_iva" name="monto_iva" type="text" value=""></td>
-         </tr>
-         <tr class="w2p_even even" id="gasto_proveedor_id__row1">
-            <td class="w2p_fl"><label class="" for="gasto_proveedor_id" id="gasto_proveedor_id__label">Proveedor: </label></td>
-            <td class="w2p_fc"></td>
-         </tr>
-         <tr class="w2p_even odd" id="gasto_proveedor_id__row2">
-            <td class="w2p_fw" colspan="2">
-               <select class="generic-widget" id="gasto_proveedor_id" name="proveedor_id">
-                  <option value=""></option>
-               </select>
-            </td>
-         </tr>
-         <tr class="w2p_even even" id="gasto_factura_proveedor__row1">
-            <td class="w2p_fl"><label class="" for="gasto_factura_proveedor" id="gasto_factura_proveedor__label">Factura Proveedor: </label></td>
-            <td class="w2p_fc"></td>
-         </tr>
-         <tr class="w2p_even odd" id="gasto_factura_proveedor__row2">
-            <td class="w2p_fw" colspan="2"><input class="string" id="gasto_factura_proveedor" name="factura_proveedor" type="text" value=""></td>
-         </tr>
-         <tr class="w2p_even even" id="gasto_fecha_gasto__row1">
-            <td class="w2p_fl"><label class="" for="gasto_fecha_gasto" id="gasto_fecha_gasto__label">Fecha Gasto: </label></td>
-            <td class="w2p_fc"></td>
-         </tr>
-         <tr class="w2p_even odd" id="gasto_fecha_gasto__row2">
-            <td class="w2p_fw" colspan="2"><input class="datetime" id="gasto_fecha_gasto" name="fecha_gasto" type="text"></td>
-         </tr>
-         <tr class="w2p_even even" id="submit_record__row1">
-            <td class="w2p_fl"></td>
-            <td class="w2p_fc"></td>
-         </tr>
-         <tr class="w2p_even odd" id="submit_record__row2">
-            <td class="w2p_fw" colspan="2">
-            	<button id="guardar_gasto" class="btn btn-primary" type="button">
-                  <i class="fa fa-save"></i> Enviar
-                </button></td>
-         </tr>
-      </tbody>
-   </table>
-   <div style="display:none;"><input name="_next" type="hidden"><input name="_formkey" type="hidden" value=""><input name="_formname" type="hidden" value="gasto/None"></div>
+<form action="#" class="container col-md-12" enctype="multipart/form-data" method="post">
+   <div class="row col-md-12">
+      <div class="w2p_even even col-md-6" id="gasto_valor_neto__row1">
+         <div class="w2p_fl">
+            <label class="" for="gasto_valor_neto" id="gasto_valor_neto__label">Valor Neto: </label>
+         </div>
+         <div class="w2p_fc">
+         </div>
+         <div class="w2p_fw" colspan="2"><input class="double moneda" id="gasto_valor_neto" name="valor_neto" type="text" value="">
+         </div>
+      </div>
+      <div class="w2p_even even col-md-6" id="gasto_valor_bruto__row1">
+         <div class="w2p_fl"><label class="" for="gasto_valor_bruto" id="gasto_valor_bruto__label">Valor Bruto: </label>
+         </div>
+         <div class="w2p_fw" colspan="2"><input class="double moneda" id="gasto_valor_bruto" name="valor_bruto" type="text" value=""></div>
+      </div>
+   </div>
+   <div class="row col-md-12">
+      <div class="w2p_even even col-md-6" id="gasto_tipo_iva__row1">
+         <div class="w2p_fl"><label class="" for="gasto_tipo_iva" id="gasto_tipo_iva__label">Tipo Iva: </label></div>
+         <div class="w2p_fc"></div>
+         <div class="w2p_fw" colspan="2">
+            <select class="generic-widget" id="gasto_tipo_iva" name="tipo_iva">
+               <option value=""></option>
+            </select>
+         </div>
+      </div>
+      <div class="w2p_even even col-md-6" id="gasto_monto_iva__row1">
+         <div class="w2p_fl"><label class="" for="gasto_monto_iva" id="gasto_monto_iva__label">Monto Iva: </label></div>
+         <div class="w2p_fc"></div>
+         <div class="w2p_fw" colspan="2"><input class="double moneda" id="gasto_monto_iva" name="monto_iva" type="text" value=""></div>
+      </div>
+   </div>
+   <div class="row col-md-12">
+      <div class="w2p_even even col-md-6" id="gasto_proveedor_id__row1">
+         <div class="w2p_fl"><label class="" for="gasto_proveedor_id" id="gasto_proveedor_id__label">Proveedor: </label></div>
+         <div class="w2p_fw" colspan="2">
+            <select class="generic-widget" id="gasto_proveedor_id" name="proveedor_id">
+               <option value=""></option>
+            </select>
+         </div>
+      </div>
+      <div class="w2p_even even col-md-6" id="gasto_factura_proveedor__row1">
+         <div class="w2p_fl"><label class="" for="gasto_factura_proveedor" id="gasto_factura_proveedor__label">Factura Proveedor: </label></div>
+         <div class="w2p_fw" colspan="2"><input class="sdiving" id="gasto_factura_proveedor" name="factura_proveedor" type="text" value=""></div>
+      </div>
+   </div>
+   <div class="row col-md-12">
+      <div class="w2p_even even col-md-6" id="gasto_descripcion__row1">
+         <div class="w2p_fl"><label class="" for="gasto_descripcion" id="gasto_descripcion__label">Descripcion: </label></div>
+         <div class="w2p_fc"></div>
+         <div class="w2p_fw" colspan="2"><input class="text" id="gasto_descripcion" name="descripcion" type="text" value=""></div>
+      </div>
+      <div class="w2p_even even col-md-6" id="gasto_fecha_gasto__row1">
+         <div class="w2p_fl"><label class="" for="gasto_fecha_gasto" id="gasto_fecha_gasto__label">Fecha Gasto: </label></div>
+         <div class="w2p_fw" colspan="2"><input class="datetime" id="gasto_fecha_gasto" name="fecha_gasto" type="text"></div>
+      </div>
+      
+   </div>
+   <div class="col-md-12 mt-50" id="submit_record__row2" 
+    style="margin-top: 10px;">
+         <button id="guardar_gasto" class="btn btn-primary mx-auto" type="button">
+         <i class="fa fa-save"></i> Enviar
+         </button>
+   </div>
 </form>
 <script src="{{=URL('static','js/gastos/crear.js')}}"></script>
+<script src="{{=URL('static','js/accounting.min.js')}}"></script>
 <script type="text/javascript">
-	var urlOpcionesGastos = "{{=URL('general', 'opciones_gastos')}}"
-	var urlAgregarGasto = "{{=URL('gasto', 'guardar_gasto')}}"
+   var urlOpcionesGastos = "{{=URL('general', 'opciones_gastos')}}"
+   var urlAgregarGasto = "{{=URL('gasto', 'guardar_gasto')}}"
 </script>
